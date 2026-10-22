@@ -55,29 +55,31 @@ export function RegressionPicksTabs({
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-1 rounded-full border border-line bg-surface p-1 text-sm">
-        <button
-          type="button"
-          onClick={() => setTab("today")}
-          className={`rounded-full px-3 py-1 font-medium transition-colors ${
-            tab === "today"
-              ? "bg-foreground text-background"
-              : "text-muted hover:text-foreground"
-          }`}
-        >
-          Today
-        </button>
-        <button
-          type="button"
-          onClick={selectTomorrow}
-          className={`rounded-full px-3 py-1 font-medium transition-colors ${
-            tab === "tomorrow"
-              ? "bg-foreground text-background"
-              : "text-muted hover:text-foreground"
-          }`}
-        >
-          Tomorrow
-        </button>
+      <div className="mb-4 flex flex-wrap items-center gap-3">
+        <div className="flex items-center gap-1 rounded-full border border-line bg-surface p-1 text-sm">
+          <button
+            type="button"
+            onClick={() => setTab("today")}
+            className={`rounded-full px-3 py-1 font-medium transition-colors ${
+              tab === "today"
+                ? "bg-foreground text-background"
+                : "text-muted hover:text-foreground"
+            }`}
+          >
+            Today
+          </button>
+          <button
+            type="button"
+            onClick={selectTomorrow}
+            className={`rounded-full px-3 py-1 font-medium transition-colors ${
+              tab === "tomorrow"
+                ? "bg-foreground text-background"
+                : "text-muted hover:text-foreground"
+            }`}
+          >
+            Tomorrow
+          </button>
+        </div>
       </div>
 
       {tab === "today" && (
