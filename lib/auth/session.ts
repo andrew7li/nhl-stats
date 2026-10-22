@@ -16,9 +16,9 @@ export const SESSION_TTL_SECONDS = 60 * 60; // 1 hour.
 // and Node.js runtimes.
 
 function getSecret(): string {
-  const secret = process.env.SESSION_SECRET;
+  const secret = process.env.SESSION_SECRET_KEY;
   if (!secret) {
-    throw new Error("SESSION_SECRET is not set");
+    throw new Error("SESSION_SECRET_KEY is not set");
   }
   return secret;
 }
