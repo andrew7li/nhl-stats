@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
+/* Light-only soft blue palette: SportsHub doesn't follow the OS light/dark
+   setting. Lines and surfaces are tinted from the same navy as the text so
+   everything reads as one blue family. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #f3f7fc;
+  --foreground: #0f2140;
+  --muted: #5a6b85;
+  --line: rgb(15 33 64 / 0.1);
+  --surface: #e4edf8;
+  --surface-hover: rgb(37 99 235 / 0.05);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
